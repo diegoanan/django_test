@@ -1,6 +1,7 @@
 import requests
 from .models import BikeStation
 from django.http import HttpResponse
+from django.shortcuts import render
 
 def update_bike_data(request):
     response = requests.get("http://api.citybik.es/v2/networks/bikesantiago")
@@ -17,3 +18,4 @@ def update_bike_data(request):
             }
         )
     return HttpResponse("Bike-data is done!")
+

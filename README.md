@@ -22,10 +22,16 @@ Dando privilegios a usuario sobre la db
 Creacion de app con
 # python manage.py startapp bikeapp
 
-## creacion de modelo dentro de bikeapp/models.py
+### *creacion de modelo dentro de bikeapp/models.py
 
-## creacion de vista en bikeapp/views.py para obtener datos de la API y guardarlos con models
+### *creacion de vista en bikeapp/views.py para obtener datos de la API y guardarlos con models
 
-## creacion y configuracion de URL en bikeapp/urls.py
+### *creacion y configuracion de URL en bikeapp/urls.py
+### *Configuracion de bikeapp/admin.py
+### *configuracion de url en test_dja/urls.py
 
-## configuracion de url en test_dja/urls.py
+### Creacion de  usuario y contraseña Django
+se configuro para que la pagina admin se muestre en / (home)
+# python manage.py createsuperuser
+este usuario es de muesta, pueden ser datos aleatorios
+    user:admin email: bjhf@web.mx pwd: djangopword123
