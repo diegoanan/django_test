@@ -4,12 +4,12 @@
 Los parametrso necesarios en postgres son los siguientes:
 # en esta prueba se uso la configuracion de encryptacion md5
 # creacion de la db
-##CREATE DATABASE djangodb;
+## CREATE DATABASE djangodb;
 
 # creacion del usuario
 CREATE USER userdjango WITH PASSWORD 'djangopword123';
 
-# ando privilegios a usuario sobre la db
+# dando privilegios a usuario sobre la db
 GRANT ALL PRIVILEGES ON DATABASE djangodb TO userdjango;
 \c djangodb;
 GRANT ALL ON SCHEMA public TO userdjango ;
