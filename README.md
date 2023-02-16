@@ -4,7 +4,7 @@
 Los parametrso necesarios en postgres son los siguientes:
 # en esta prueba se uso la configuracion de encryptacion md5
 # creacion de la db
-CREATE DATABASE djangodb;
+##CREATE DATABASE djangodb;
 
 # creacion del usuario
 CREATE USER userdjango WITH PASSWORD 'djangopword123';
