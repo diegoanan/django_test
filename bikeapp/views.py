@@ -1,13 +1,19 @@
 import requests
 from .models import BikeStation
 from django.http import HttpResponse
-from django.shortcuts import render
 
+# Función para obtener los datos de una página
 def update_bike_data(request):
+    # Realizar el request get para obtener la data
     response = requests.get("http://api.citybik.es/v2/networks/bikesantiago")
+    
+    # Crea un json en memoria para almacenar la data en memoria en una nueva variable
     bike_data = response.json()
     stations = bike_data["network"]["stations"]
+
+    # Recorre la data del arreglo
     for station in stations:
+        #almacenala data en la DB con ayuda de objetos del modelo
         BikeStation.objects.update_or_create(
             name=station["name"],
             defaults={
@@ -17,5 +23,25 @@ def update_bike_data(request):
                 "empty_slots": station["empty_slots"]
             }
         )
-    return HttpResponse("Bike-data is done!")
+    #Generacion de menu de retorno
+    menu_html = """
+    <h1>Bike-data is done!</h1>
+    <h2>Menú de opciones</h2>
+    <ul>
+        <li><a href="http://127.0.0.1:8000">Home</a></li>
+        <li><a href="http://127.0.0.1:8000/admin">Admin</a></li>
+        <li><a href="http://127.0.0.1:8000/sea">Sea data update</a></li>
+    </ul>
+    """
+    return HttpResponse(menu_html)
 
+def menu(request):
+    menu_html = """
+        <h1>Menú de opciones</h1>
+        <ul>
+            <li><a href="http://127.0.0.1:8000/admin">Admin</a></li>
+            <li><a href="http://127.0.0.1:8000/bike">Bike data update</a></li>
+            <li><a href="http://127.0.0.1:8000/sea">Sea data update</a></li>
+        </ul>
+    """
+    return HttpResponse(menu_html)
