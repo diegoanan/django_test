@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.urls import path, include
 from django.contrib import admin
-from bikeapp.views import update_bike_data,menu
+from bikeapp.views import update_bike_data,menu,bike_list
 from sea_search.views import get_data_sea
 
 
@@ -23,6 +23,7 @@ from sea_search.views import get_data_sea
 urlpatterns = [
     path('',menu,name='menu'),
     path('admin/',admin.site.urls),
+    path('bike_list',bike_list,name='bike_list'),
     #Con esto ejecutamos las funciones para cargar la data a la db
     path('bike/',update_bike_data,name='update_bike_data'),
     path('sea/',get_data_sea,name='get_data_sea'),

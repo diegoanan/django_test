@@ -1,0 +1,34 @@
+
+{% block content %}
+    <div class="container mt-4">
+        <h1>Bikes in Santiago</h1>
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Latitude</th>
+                    <th scope="col">Longitude</th>
+                    <th scope="col">Free bikes</th>
+                    <th scope="col">Empty slots</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for bike in bikes %}
+                    <tr>
+                        <td>{{ bike.name }}</td>
+                        <td>{{ bike.latitude }}</td>
+                        <td>{{ bike.longitude }}</td>
+                        <td>{{ bike.free_bikes }}</td>
+                        <td>{{ bike.empty_slots }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h2>Menú de opciones</h2>
+        <ul>
+            <li><a href="http://127.0.0.1:8000">Home</a></li>
+            <li><a href="http://127.0.0.1:8000/admin">Admin</a></li>
+            <li><a href="http://127.0.0.1:8000/sea">Sea data update</a></li>
+        </ul>
+    </div>
+{% endblock %}

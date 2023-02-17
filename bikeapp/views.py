@@ -1,4 +1,5 @@
 import requests
+from django.shortcuts import render
 from .models import BikeStation
 from django.http import HttpResponse
 
@@ -35,13 +36,20 @@ def update_bike_data(request):
     """
     return HttpResponse(menu_html)
 
+#funcion de menu principal
 def menu(request):
     menu_html = """
         <h1>Menú de opciones</h1>
         <ul>
             <li><a href="http://127.0.0.1:8000/admin">Admin</a></li>
+            <li><a href="http://127.0.0.1:8000/bike_list">Bike list</a></li>
             <li><a href="http://127.0.0.1:8000/bike">Bike data update</a></li>
             <li><a href="http://127.0.0.1:8000/sea">Sea data update</a></li>
         </ul>
     """
     return HttpResponse(menu_html)
+
+#Genera visualizacion de datos en html
+def bike_list(request):
+    bikes = BikeStation.objects.all()
+    return render(request, 'bike_list.html', {'bikes': bikes})
