@@ -8,26 +8,27 @@ pip install -r requirements.txt
 
 # Ejecucion
 Bastara con correr la siguiente linea de comandos
-
 ### python manage.py runserver
 
 la visualizacion del proyecto es atraves de rireccion 127.0.0.1:8000, estos parametros son predeterminados de django
+#### Al ejecutar el servicio, se podra visualizar los menus para la navegacion entra sus paginas
 
 # -------------PostgreSQl
-####Los parametrso necesarios en postgres son los siguientes:
+#### Los parametrso necesarios en postgres son los siguientes:
 en esta prueba se uso la configuracion de encryptacion md5
-###creacion de la db
-CREATE DATABASE djangodb;
+### creacion de la db
+#### CREATE DATABASE djangodb;
 
-###creacion del usuario
-CREATE USER userdjango WITH PASSWORD 'djangopword123';
+### creacion del usuario
+#### CREATE USER userdjango WITH PASSWORD 'djangopword123';
 
-###Dando privilegios a usuario sobre la db
-GRANT ALL PRIVILEGES ON DATABASE djangodb TO userdjango;
-\c djangodb;
-GRANT ALL ON SCHEMA public TO userdjango ;
-GRANT ALL ON SCHEMA public TO public;
---------- Configuracion Django
+### Dando privilegios a usuario sobre la db
+#### GRANT ALL PRIVILEGES ON DATABASE djangodb TO userdjango;
+#### \c djangodb;
+#### GRANT ALL ON SCHEMA public TO userdjango ;
+#### GRANT ALL ON SCHEMA public TO public;
+
+# --------- Configuracion Django
 
 ### Modificacion de parametos en test_dja/settings.py DATABASES
 
@@ -54,6 +55,6 @@ se configuro parala pagina admin muestre en admin/
 python manage.py createsuperuser
 
 este usuario es de muesta, pueden ser datos aleatorios
-    user:admin email: bjhf@web.mx pwd: djangopword123
+#### user:admin email: bjhf@web.mx pwd: djangopword123
 
 ### En home (localhost:8000/) se muestra menu de direcciones
