@@ -3,6 +3,7 @@ import requests
 from django.http import HttpResponse
 from bs4 import BeautifulSoup
 from .models import Proyecto
+from django.shortcuts import render
 import datetime
 
 # URL de la página a scrapear
@@ -65,7 +66,14 @@ def get_data_sea(request):
         <li><a href="http://127.0.0.1:8000">Home</a></li>
         <li><a href="http://127.0.0.1:8000/admin">Admin</a></li>
         <li><a href="http://127.0.0.1:8000/bike">Bike data update</a></li>
+        <li><a href="http://127.0.0.1:8000/bike_list">Bike list</a></li>
+        <li><a href="http://127.0.0.1:8000/sea_list">Sea list</a></li>
     </ul>
     """
     #retorna menu de retorno
     return HttpResponse(menu_html)
+
+    #Genera visualizacion de datos en html
+def sea_list(request):
+    seas = Proyecto.objects.all()
+    return render(request, 'sea_list.html', {'proyectos': seas})

@@ -32,6 +32,8 @@ def update_bike_data(request):
         <li><a href="http://127.0.0.1:8000">Home</a></li>
         <li><a href="http://127.0.0.1:8000/admin">Admin</a></li>
         <li><a href="http://127.0.0.1:8000/sea">Sea data update</a></li>
+        <li><a href="http://127.0.0.1:8000/bike_list">Bike list</a></li>
+        <li><a href="http://127.0.0.1:8000/sea_list">Sea list</a></li>
     </ul>
     """
     return HttpResponse(menu_html)
@@ -44,6 +46,7 @@ def menu(request):
             <li><a href="http://127.0.0.1:8000/admin">Admin</a></li>
             <li><a href="http://127.0.0.1:8000/bike_list">Bike list</a></li>
             <li><a href="http://127.0.0.1:8000/bike">Bike data update</a></li>
+            <li><a href="http://127.0.0.1:8000/sea_list">Sea list</a></li>
             <li><a href="http://127.0.0.1:8000/sea">Sea data update</a></li>
         </ul>
     """

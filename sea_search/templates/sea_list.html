@@ -1,25 +1,24 @@
-
 {% block content %}
     <div class="container mt-4">
-        <h1>Bikes in Santiago</h1>
+        <h1>Seia</h1>
         <table class="table table-striped">
             <thead>
                 <tr>
                     <th scope="col">Name</th>
-                    <th scope="col">Latitude</th>
-                    <th scope="col">Longitude</th>
-                    <th scope="col">Free bikes</th>
-                    <th scope="col">Empty slots</th>
+                    <th scope="col">Fecha</th>
+                    <th scope="col">Region</th>
+                    <th scope="col">Tipo de proyecto</th>
+                    <th scope="col">Estado</th>
                 </tr>
             </thead>
             <tbody>
-                {% for bike in bikes %}
+                {% for proyecto in proyectos %}
                     <tr>
-                        <td>{{ bike.name }}</td>
-                        <td>{{ bike.latitude }}</td>
-                        <td>{{ bike.longitude }}</td>
-                        <td>{{ bike.free_bikes }}</td>
-                        <td>{{ bike.empty_slots }}</td>
+                        <td>{{ proyecto.name }}</td>
+                        <td>{{ proyecto.fecha }}</td>
+                        <td>{{ proyecto.region }}</td>
+                        <td>{{ proyecto.tipo_proyecto }}</td>
+                        <td>{{ proyecto.estado }}</td>
                     </tr>
                 {% endfor %}
             </tbody>
@@ -28,8 +27,8 @@
         <ul>
             <li><a href="http://127.0.0.1:8000">Home</a></li>
             <li><a href="http://127.0.0.1:8000/admin">Admin</a></li>
+            <li><a href="http://127.0.0.1:8000/bike_list">Bike list</a></li>
             <li><a href="http://127.0.0.1:8000/bike">Bike data update</a></li>
-            <li><a href="http://127.0.0.1:8000/sea_list">Sea list</a></li>
             <li><a href="http://127.0.0.1:8000/sea">Sea data update</a></li>
         </ul>
     </div>

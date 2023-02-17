@@ -22,7 +22,7 @@ GRANT ALL ON SCHEMA public TO public;
 
 ### Modificacion de parametos en test_dja/settings.py DATABASES
 
-# Creacion de app  tarea1 con
+# Creacion de app  tarea1 
 python manage.py startapp bikeapp
 
 ### *creacion de modelo dentro de bikeapp/models.py
@@ -32,7 +32,7 @@ python manage.py startapp bikeapp
 ### *creacion y configuracion de URL en bikeapp/urls.py
 
 
-# Creacion de app  tarea con
+# Creacion de app  tarea 2 
 python manage.py startapp sea_search
 
 ### *creacion de modelo dentro de sea_search/models.py
